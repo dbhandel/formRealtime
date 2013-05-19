@@ -1,0 +1,24 @@
+
+
+form {
+	background-color: gray;
+	margin: auto;
+	max-width: 600px;
+	min-width: 452px;
+	padding-right: 20px;
+	padding-top: 14px;
+	margin-top: 30px;
+}
+
+li {
+	text-align: right;
+	list-style-type: none;
+	font-weight: bold;
+	font-size: 22px;
+}
+
+p {
+	color: red;
+	text-align: center;
+}
+/*re-architect form to classes good for the look of a larger site*/
