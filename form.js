@@ -1,5 +1,5 @@
 $(function() {
-	$('form').submit(function(e) {
+	$('form').keyup(function(e) {
 		e.preventDefault();
 		$('p').empty();  //clears any previous "this form is invalid" message
   		validateForm();	
@@ -15,7 +15,7 @@ function validateForm () {
 		phoneValue =  $('#phone').val() ; 
 		
 	var nameResult = validateName(nameValue) ;
-	isFormValid(nameResult);
+	isFormValid('name', nameResult);
 	
 	var emailResult = validateEmail(emailValue);
 	isFormValid(emailResult);
@@ -32,22 +32,31 @@ function validateForm () {
 		
 }
  
-function isFormValid(result) {
-		if (result === false) {
-	$('body').append('<p>This form is invalid!</p>');
-	return;
+function isFormValid(field, result) {
+	var 	selectorInput = "input." + field,
+		selectorLi = "li." + field
+	if (result === false) {
+		$(selectorInput).removeClass('good');
+		$(selectorInput).addClass('bad');
+		// $('input').before('<p>bad</p>');
+	// $('body').append('<p>This form is invalid!</p>');
+	}
+	else {
+		$(selectorInput).removeClass('bad');
+		$(selectorInput).addClass('good');
 	}
 }
 
 function validateName (nameValue) {
-	 	for (i =0; i < nameValue.length; i++) {
-	 		var utf8 = nameValue[i].charCodeAt();
-	 		if (!((utf8 > 64 && utf8 <91) 
-			|| (utf8 > 96 && utf8 < 123))) {
-	 			return false;
-	 		}		
- 		}
+ 	for (i =0; i < nameValue.length; i++) {
+ 		var utf8 = nameValue[i].charCodeAt();
+ 		if (!((utf8 > 64 && utf8 <91) 
+		|| (utf8 > 96 && utf8 < 123))) {
+ 			return false;
+ 		}		
 	}
+	return true;
+}
 
 function validateEmail (emailValue) {
 	var 	indexofAtSign = emailValue.indexOf('@'),
