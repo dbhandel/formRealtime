@@ -1,9 +1,9 @@
 .good {
-	background-color: green;
+	border: solid 5px green;
 }
 
 .bad {
-	background-color: yellow;
+	border: solid 5px red;
 }
 
 
