@@ -1,8 +1,8 @@
-.good {
+.true {
 	border: solid 5px green;
 }
 
-.bad {
+.false {
 	border: solid 5px red;
 }
 
@@ -16,7 +16,18 @@ form {
 	padding-top: 14px;
 	margin-top: 30px;
 }
-
+.alertPanel {
+	float: right;
+	width: 100px;
+	height: 300px;
+	background-color: gray;
+	padding-left: 6px;
+	line-height: 2.5;
+	font-size: 12px;
+}
+span {
+	width: 70px;
+}
 li {
 	text-align: right;
 	list-style-type: none;
@@ -25,8 +36,5 @@ li {
 	/*padding-right: 100px;*/
 }
 
-p {
-	color: red;
-	text-align: center;
-}
+
 /*re-architect form to classes good for the look of a larger site*/
